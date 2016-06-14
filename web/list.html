@@ -1,0 +1,17 @@
+{% extends 'layout.html' %}
+
+{% block title %}Posts{% endblock %}
+
+{% block content %}
+  <h1>聊天區</h1>
+  <p>目前累積 <strong>{{ posts.length }}</strong> 則留言</p>
+  <p><a href="/post/new"target="_blank" style="text-decoration:none;color:red;">我有話要說</a></p>
+  <ul id="posts">
+    {% for post in posts %}
+      <li>
+        <h2>暱稱:{{ post.title }}</h2>
+        <p>{{post.body}}</p>
+      </li>
+    {% endfor %}
+  </ul>
+{% endblock %}
